@@ -1,0 +1,8 @@
+.list {
+
+}
+
+.todo-list-item span.completed {
+color:brown;
+text-decoration:line-through;
+}

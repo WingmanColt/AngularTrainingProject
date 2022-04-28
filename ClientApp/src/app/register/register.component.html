@@ -1,0 +1,21 @@
+   <form [formGroup]="form">
+
+    <div class="form-group">
+        <label for="Id">Id</label>
+        <input type="text" id="Id" formControlName="id">
+       <div *ngIf="IdControl.touched && IdControl.invalid" class="error">Id is required</div>
+    </div>
+    {{ IdControl.errors | json}}
+    
+   <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="text" id="Email" formControlName="email">
+       <div *ngIf="emailControl.touched && emailControl.invalid" class="error">Email is required</div>
+    </div>
+
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="password" id="Password" [formControl]="form.get('password')">
+    </div>
+
+</form>

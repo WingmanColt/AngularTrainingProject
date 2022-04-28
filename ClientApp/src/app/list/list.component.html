@@ -1,0 +1,25 @@
+<div class="list"> Hello ListComponent! </div>
+
+<input #nameInput type="text" (keyup)="onKeyUpHandler(nameInput.value)">
+<button (click)="addtodo(nameInput.value); nameInput.value = '';">Add todo</button>
+
+<div id="todo-list">
+    <input type="text" #filterInput>
+    <todo-item *ngFor="let todo of todos let i = index" [todo]="todo" (toggle)="toggleCompleted(i)">
+    </todo-item>
+</div>
+
+<div id="todo-list">
+    <p>Second Todos2 List:</p>
+    <input type="text" #filterInput>
+
+    <todo-item *ngFor="let todo of todos2 let i = index" [todo]="todo" (toggle)="toggleCompleted(i)">
+    </todo-item>
+</div>
+
+<input type="text" #text>
+
+
+<input #currentNumberInput type="number" value="currentValue" min="0" (change)="changeHandler($event)">
+<div appHighlight [value]="currentValue" [index]="0">0</div>
+<div appHighlight [value]="currentValue" [index]="1">1</div>
